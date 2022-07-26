@@ -23,18 +23,21 @@ io.on('connection', (socket) => {
     })
     socket.on('initResponse', (initResponse) => {
         socketClients = initResponse.socketClients;
+        socket.broadcast.emit('newClients', {
+            socketClients: socketClients
+        })
     })
     if (socketClients.length > 0) {
-        socket.on('disconnect', () => { 
+        socket.on('disconnect', () => {
             for (let i = 0; i < socketClients.length; i++) {
                 if (socketClients[i].id === socket.id) {
                     socketClients.splice(i, 1);
                 }
             };
-        })
-            socket.emit.broadcast('clientDisconnect',{
-                socketClients:socketClients
+            socket.broadcast.emit('clientDisconnect', {
+                socketClients: socketClients
             })
+        })
     }
 });
 

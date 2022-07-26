@@ -1,0 +1,12 @@
+#clients{
+    border: 3px yellow solid;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    text-align: center;
+    align-items: center;
+    width: 20%;
+    margin-left: 80%;
+}
