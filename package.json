@@ -1,0 +1,24 @@
+{
+  "name": "livechat",
+  "version": "0.1.0",
+  "description": "chat pour parler en live",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OrionMaximov/livechat.git"
+  },
+  "keywords": [
+    "chat",
+    "live",
+    "friend"
+  ],
+  "author": "OrionMaximov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OrionMaximov/livechat/issues"
+  },
+  "homepage": "https://github.com/OrionMaximov/livechat#readme"
+}
