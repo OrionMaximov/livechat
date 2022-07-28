@@ -35,9 +35,3 @@
 </div>
 
 ###
-
-<br clear="both">
-
-<img href="https://raw.githubusercontent.com/OrionMaximov/OrionMaximov/blob/output/snake.svg" alt="Snake animation" />
-
-###
