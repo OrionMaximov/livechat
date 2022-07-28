@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Livechat</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.1/socket.io.min.js"
+        integrity="sha512-mHO4BJ0ELk7Pb1AzhTi3zvUeRgq3RXVOu9tTRfnA6qOxGK4pG2u57DJYolI4KrEnnLTcH9/J5wNOozRTDaybXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.1.0/tinymce.min.js"
+        integrity="sha512-dr3qAVHfaeyZQPiuN6yce1YuH7YGjtUXRFpYK8OfQgky36SUfTfN3+SFGoq5hv4hRXoXxAspdHw4ITsSG+Ud/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/script.js" defer></script>
+</head>
+
+<body>
+    <div id="answerPrivate" class="hide">
+        <div id="innerAnswer">
+            <div id="closeAnswer" class="close">X</div>
+        </div>
+    </div> 
+    <div id="private" class="hide">
+        <div id="innerPrivate">
+            <div id="closePrivate" class="close">X</div>
+            <textarea id="mP"></textarea>
+            <button id="sendP">Envoi du bois</button>
+        </div>
+    </div>
+    <div id="clients"></div>
+    <textarea id="mytextarea"></textarea>
+    <button id="sendMsg" type="submit">Send</button>
+    <div id="msg"></div>
+   
+
+</body>
+
+</html>

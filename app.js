@@ -6,20 +6,20 @@ const io = require('socket.io')(server);
 const hostname = '127.0.0.1';
 const port = 666;
 let socketClients = [];
-
+let message = [];
 
 app.use(express.static('public'));
 app.get('/', (req, res) => { res.sendFile('index.html', { root: __dirname }) });
 
 //lien client/serveur
 
-
 io.on('connection', (socket) => {
     socketClients.push({ id: socket.id });
     socket.emit("init", {
-        message: "bienvenue sur livechat",
+        mail: "bienvenue sur livechat",
         id: socket.id,
         socketClients: socketClients,
+        messages:message
     })
     socket.on('initResponse', (initResponse) => {
         socketClients = initResponse.socketClients;
@@ -39,11 +39,13 @@ io.on('connection', (socket) => {
             })
         })
     }
+    socket.on('newMsg', (newMsg) => {
+        message = newMsg.message;
+        socket.broadcast.emit('newMsgResponse', {message: message})
+    });
+    socket.on('newPrivate',(newPrivate)=>{
+        socket.broadcast.to(newPrivate.idContact).emit('privateResponse',{privateResponse:newPrivate});
+    })
 });
-
-
-
-
-
 
 server.listen(port, hostname, () => { console.log(`Server running at http://${hostname}:${port}/`); });
